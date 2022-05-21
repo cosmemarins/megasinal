@@ -6,7 +6,7 @@ module.exports = {
     const settingsId = await queryInterface.rawSelect('settings', { where: {}, limit: 1 }, ['id']);
     if (!settingsId) {
       return queryInterface.bulkInsert('settings', [{
-        email: 'cosmemarins@gmail.com',
+        email: 'cosme.marins@gmail.com',
         password: bcrypt.hashSync('sardinha00'),
         apiUrl: 'https://testnet.binance.vision/api',
         streamUrl: 'wss://testnet.binance.vision/ws',
@@ -15,7 +15,7 @@ module.exports = {
         twilioSid: null,
         twilioToken: null,
         twilioPhone: null,
-        telegramBot: '5191383434:AAHNoeJVN6EJqU5Bf9MMCipV5VQStuN_sS4',
+        telegramBot: '5258002187:AAEZFh-EBR9Tbfi9Jjpt1u3AkS8BafUiZGs',
         telegramToken: null,
         telegramChat: 868716758,
         createdAt: new Date(),
