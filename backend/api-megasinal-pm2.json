@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "api-megasinal",
+            "script": "npm",
+            "args": "start"
+        }
+    ]
+}
