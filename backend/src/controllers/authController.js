@@ -11,13 +11,18 @@ async function doLogin(req, res, next) {
     const origin = req.headers.origin;
 
     let entity;
-
+    console.log("email", email);
+    console.log("password", password);
+    console.log("origin", origin);
     if (origin === process.env.BEHOLDER_URL) {
         entity = await usersRepository.getUserByEmail(email);
+        console.log("BEHOLDER entity", entity);
         if (!entity || !entity.isActive) return res.sendStatus(401);
     }
-    else if (origin === process.env.MEGASINAL_URL)
+    else if (origin === process.env.MEGASINAL_URL) {
         entity = await settingsRepository.getSettingsByEmail(email);
+        console.log("MEGASINAL entity", entity);
+    }
 
     if (entity) {
         const isValid = bcrypt.compareSync(password, entity.password);

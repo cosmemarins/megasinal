@@ -121,7 +121,7 @@ function ViewOrderModal(props) {
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
-                                        <b>Midas ID:</b> {order.id}
+                                        <b>MegaSinal ID:</b> {order.id}
                                     </div>
                                     {
                                         order.automationId

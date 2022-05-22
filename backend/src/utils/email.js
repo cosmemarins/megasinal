@@ -11,7 +11,7 @@ module.exports = (settings, message, to, subject) => {
     const msg = {
         to: to || settings.email,
         from: settings.email,
-        subject: subject || 'Midas has a message for you!',
+        subject: subject || 'MegaSinal has a message for you!',
         text: message,
     }
 

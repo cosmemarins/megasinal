@@ -6,7 +6,7 @@ function Footer() {
             <footer className="bg-white rounded shadow p-5 mb-4 mt-4">
                 <div className="row">
                     <div className="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
-                        <p className="mb-0 text-center text-lg-start">© 2010-<span className="current-year">2022</span> <a
+                        <p className="mb-0 text-center text-lg-start">© 2021-<span className="current-year">2022</span> <a
                             className="text-primary fw-normal" href="https://www.megasinal.com">MegaSinal</a></p>
                     </div>
                     <div className="col-12 col-md-8 col-xl-6 text-center text-lg-start">

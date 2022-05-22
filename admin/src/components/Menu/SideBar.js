@@ -38,10 +38,12 @@ function SideBar() {
                 <ul className="nav flex-column pt-3 pt-md-0">
                     <li className="nav-item">
                         <Link to="/dashboard" className="nav-link d-flex align-items-center">
+                            {/**
                             <span className="sidebar-icon">
                                 <img src="/img/favicon/favicon-32x32.png" height="32" width="32" alt="MegaSinal admin Logo" />
                             </span>
-                            <span className="mt-1 ms-1 sidebar-text">Midas 2.0</span>
+                             */}
+                            <span className="mt-1 ms-1 sidebar-text">MegaSinal Admin 2.0</span>
                         </Link>
                     </li>
                     <SideBarItem to="/dashboard" text="Dashboard">

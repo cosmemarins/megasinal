@@ -6,7 +6,7 @@ function NavBar() {
     <React.Fragment>
       <nav className="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
         <Link className="navbar-brand me-lg-5" to="/">
-          <img className="navbar-brand-light" src="/img/brand/light.svg" alt="Midas logo" />
+          <img className="navbar-brand-light" src="/img/brand/light.svg" alt="MegaSinal logo" />
         </Link>
         <div className="d-flex align-items-center">
           <button className="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse"

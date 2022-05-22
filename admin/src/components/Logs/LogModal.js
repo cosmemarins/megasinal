@@ -8,7 +8,7 @@ import LogView from './LogView';
 function LogModal(props) {
     return (
         <div className="modal fade" id="modalLogs" tabIndex="-1" role="dialog">
-            <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
                         <p className="modal-title">Log Viewer</p>

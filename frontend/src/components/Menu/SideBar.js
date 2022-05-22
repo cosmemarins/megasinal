@@ -39,9 +39,9 @@ function SideBar() {
                     <li className="nav-item">
                         <Link to="/dashboard" className="nav-link d-flex align-items-center">
                             <span className="sidebar-icon">
-                                <img src="/img/favicon/favicon-32x32.png" height="32" width="32" alt="Midas Logo" />
+                                <img src="/img/favicon/favicon-32x32.png" height="32" width="32" alt="MegaSinal Logo" />
                             </span>
-                            <span className="mt-1 ms-1 sidebar-text">Midas 2.0</span>
+                            <span className="mt-1 ms-1 sidebar-text">MegaSinal</span>
                         </Link>
                     </li>
                     <li className="nav-item">

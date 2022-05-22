@@ -14,7 +14,7 @@ function init(automations) {
             if (auto.isActive && auto.schedule)
                 addSchedule(auto.get ? auto.get({ plain: true }) : auto);
         });
-        if (LOGS) logger('system', 'Midas Agenda has started!');
+        if (LOGS) logger('system', 'MegaSinal Agenda has started!');
     } catch (err) {
         throw new Error(`Can't start agenda! Err: ${err.message}`);
     }

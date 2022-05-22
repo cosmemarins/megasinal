@@ -31,7 +31,7 @@ module.exports = class Beholder {
 
         setTimeout(() => {
             automations.filter(auto => auto.isActive && !auto.schedule).map(auto => this.updateBrain(auto));
-            logger('beholder', `Midas Brain has started for user ${automations[0].userId}!`);
+            logger('beholder', `MegaSinal Brain has started for user ${automations[0].userId}!`);
         }, 1000)
     }
 
@@ -394,7 +394,7 @@ module.exports = class Beholder {
         automation.grids = automation.grids.sort((a, b) => a.id - b.id);
 
         if (LOGS)
-            logger('A:' + automation.id, `Midas is in the GRID zone at ${automation.name}`);
+            logger('A:' + automation.id, `MegaSinal is in the GRID zone at ${automation.name}`);
 
         const indexes = automation.indexes.split(',');
         const MEMORY = await this.cache.getAll(...indexes);
@@ -404,7 +404,7 @@ module.exports = class Beholder {
             if (!Function("MEMORY", "return " + grid.conditions)(MEMORY)) continue;
 
             if (automation.logs)
-                logger('A:' + automation.id, `Midas evaluated a condition at ${automation.name} => ${grid.conditions}`);
+                logger('A:' + automation.id, `MegaSinal evaluated a condition at ${automation.name} => ${grid.conditions}`);
 
             automation.actions[0].orderTemplateId = grid.orderTemplateId;
 
@@ -423,7 +423,7 @@ module.exports = class Beholder {
             } catch (err) {
                 await transaction.rollback();
                 logger('A:' + automation.id, err);
-                return { type: 'error', text: `Midas can't generate grids for ${automation.name}. ERR: ${err.message}` };
+                return { type: 'error', text: `MegaSinal can't generate grids for ${automation.name}. ERR: ${err.message}` };
             }
 
             automation = await automationsRepository.getAutomation(automation.id);//pega limpo
@@ -619,7 +619,7 @@ module.exports = class Beholder {
         if (!isPriceActivated) return false;
 
         if (LOGS)
-            logger('A:' + automation.id, `Midas is in the Trailing zone at ${automation.name}`);
+            logger('A:' + automation.id, `MegaSinal is in the Trailing zone at ${automation.name}`);
 
         const isStopActivated = isBuy ? currentPrice >= stopPrice && previousPrice < stopPrice
             : currentPrice <= stopPrice && previousPrice > stopPrice;
@@ -696,7 +696,7 @@ module.exports = class Beholder {
                 const evalCondition = automation.conditions + (invertedCondition ? ' && ' + invertedCondition : '');
 
                 if (LOGS || automation.logs) {
-                    logger('A:' + automation.id, `Midas trying to evaluate:\n${evalCondition}\n at ${automation.name}`);
+                    logger('A:' + automation.id, `MegaSinal trying to evaluate:\n${evalCondition}\n at ${automation.name}`);
                     logger('A:' + automation.id, JSON.stringify(MEMORY));
                 }
 
@@ -710,7 +710,7 @@ module.exports = class Beholder {
             }
 
             if ((LOGS || automation.logs) && !['GRID', 'TRAILING'].includes(automation.actions[0].type))
-                logger('A:' + automation.id, `Midas evaluated a condition at automation: ${automation.name} => ${automation.conditions}`);
+                logger('A:' + automation.id, `MegaSinal evaluated a condition at automation: ${automation.name} => ${automation.conditions}`);
 
             const settings = await getDefaultSettings();
             const user = await getUserDecrypted(automation.userId);
@@ -736,7 +736,7 @@ module.exports = class Beholder {
         const automations = this.findAutomations(memoryKey);
 
         if (!automations || !automations.length || this.isLocked(automations.map(a => a.id))) {
-            if (LOGS) console.log(`Midas has no automations for memoryKey: ${memoryKey} or the brain is locked`);
+            if (LOGS) console.log(`MegaSinal has no automations for memoryKey: ${memoryKey} or the brain is locked`);
             return false;
         }
 

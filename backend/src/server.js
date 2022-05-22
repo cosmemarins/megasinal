@@ -15,13 +15,13 @@ const Cache = require('./utils/cache');
     const settings = await settingsRepository.getDefaultSettings()
     if (!settings) throw new Error(`There is no settings.`);
 
-    logger('system', 'Initializing the Midas Brain...');
+    logger('system', 'Initializing the MegaSinal Brain...');
 
     let users = await usersRepository.getActiveUsers();
     users = users.map(u => u.get({ plain: true }));
     await hydra.init(users);
 
-    logger('system', `Starting the Midas Agenda...`);
+    logger('system', `Starting the MegaSinal Agenda...`);
     agenda.init(users.map(u => u.automations));
 
     logger('system', `Starting the server apps...`);

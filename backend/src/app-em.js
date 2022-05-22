@@ -299,7 +299,7 @@ function getConnections() {
 function sendMessage(userId, jsonObject) {
     try {
         if (jsonObject.notification)
-            push.send(userId, jsonObject.notification.text, 'Midas Notification', jsonObject.notification);
+            push.send(userId, jsonObject.notification.text, 'MegaSinal Notification', jsonObject.notification);
     } catch (err) {
 
     }

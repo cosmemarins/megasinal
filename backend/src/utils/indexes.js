@@ -65,7 +65,7 @@ const indexKeys = {
     WEMA: 'WEMA',
     WILLIAMS_R: 'WILLIAMS-R',
     ICHIMOKU: 'ICHIMOKU',
-    //Midas INDICATORS
+    //MegaSinal INDICATORS
     MINI_TICKER: 'MINI_TICKER',
     BOOK: 'BOOK',
     WALLET: 'WALLET',

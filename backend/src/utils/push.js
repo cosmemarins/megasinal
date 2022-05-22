@@ -18,7 +18,7 @@ function getFromCache(userId) {
     return messages;
 }
 
-async function send(user, body, title = 'Midas Notification', data = {}) {
+async function send(user, body, title = 'MegaSinal Notification', data = {}) {
 
     if (typeof user === 'number')
         user = await usersRepository.getUser(user, false);

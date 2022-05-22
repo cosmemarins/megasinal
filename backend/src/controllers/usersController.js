@@ -151,23 +151,23 @@ async function sendResetAlerts(user, newPassword) {
         promises.push(email(settings, `
         Hello ${user.name.split(' ')[0]},
 
-        Your password at Midas was resetted.
+        Your password at MegaSinal was resetted.
 
         Access the platform and use this email and the new password: ${newPassword}
 
         ${process.env.BEHOLDER_URL}
 
         Enjoy!
-        `, user.email, 'Midas password resetted!'));
+        `, user.email, 'MegaSinal password resetted!'));
 
     if (user.phone && settings.twilioSid)
-        promises.push(sms(settings, `Your password at Midas was resetted. Look your email!`, user.phone));
+        promises.push(sms(settings, `Your password at MegaSinal was resetted. Look your email!`, user.phone));
 
     if (user.telegramChat && settings.telegramBot)
         promises.push(telegram(settings, `
         Hello ${user.name.split(' ')[0]},
 
-        Your password at Midas was resetted.
+        Your password at MegaSinal was resetted.
 
         Access the platform and use this email and the new password: ${newPassword}
 
@@ -187,7 +187,7 @@ async function sendWelcomeAlerts(user, newPassword) {
         promises.push(email(settings, `
         Hello ${user.name.split(' ')[0]},
 
-        Your account at Midas was created.
+        Your account at MegaSinal was created.
 
         Access the platform and use this email and your password: ${newPassword}
 
@@ -200,10 +200,10 @@ async function sendWelcomeAlerts(user, newPassword) {
         https://t.me/${settings.telegramBot}
 
         Enjoy!
-        `, user.email, 'Midas account created!'));
+        `, user.email, 'MegaSinal account created!'));
 
     if (user.phone && settings.twilioSid)
-        promises.push(sms(settings, `Your account at Midas was created. Look your email!`, user.phone));
+        promises.push(sms(settings, `Your account at MegaSinal was created. Look your email!`, user.phone));
 
     await Promise.all(promises);
 }
@@ -214,20 +214,20 @@ async function sendStopAlerts(user) {
 
     const fullText = `Hello ${user.name.split(' ')[0]},
 
-    Your account at Midas was stopped.
+    Your account at MegaSinal was stopped.
 
     Sorry!`;
 
     if (settings.sendGridKey)
-        promises.push(email(settings, fullText, user.email, 'Midas account stopped!'));
+        promises.push(email(settings, fullText, user.email, 'MegaSinal account stopped!'));
 
-    const shortText = `Your account at Midas was stopped. Sorry!`;
+    const shortText = `Your account at MegaSinal was stopped. Sorry!`;
 
     if (user.phone && settings.twilioSid)
         promises.push(sms(settings, shortText, user.phone));
 
     if (user.pushToken)
-        promises.push(push.send(user, shortText, 'Midas Notification', {
+        promises.push(push.send(user, shortText, 'MegaSinal Notification', {
             text: shortText,
             type: 'error'
         }));
@@ -244,20 +244,20 @@ async function sendStartAlerts(user) {
 
     const fullText = `Hello ${user.name.split(' ')[0]},
 
-    Your account at Midas was (re)started.
+    Your account at MegaSinal was (re)started.
 
     Enjoy!`;
 
     if (settings.sendGridKey)
-        promises.push(email(settings, fullText, user.email, 'Midas account started!'));
+        promises.push(email(settings, fullText, user.email, 'MegaSinal account started!'));
 
-    const shortText = `Your account at Midas was (re)started. Enjoy!`;
+    const shortText = `Your account at MegaSinal was (re)started. Enjoy!`;
 
     if (user.phone && settings.twilioSid)
         promises.push(sms(settings, shortText, user.phone));
 
     if (user.pushToken)
-        promises.push(push.send(user, shortText, 'Midas Notification', {
+        promises.push(push.send(user, shortText, 'MegaSinal Notification', {
             text: shortText,
             type: 'success'
         }));
